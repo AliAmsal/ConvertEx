@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/light"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@color/bg"
+    android:foregroundGravity="center_vertical"
+    tools:context=".MainActivity">
+
+
+    <Spinner
+        android:id="@+id/spinner_from"
+        android:layout_width="224dp"
+        android:layout_height="40dp"
+        android:layout_margin="20dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/spinner_border"
+        android:gravity="center"
+
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.494" />
+
+    <Spinner
+        android:id="@+id/spinner_to"
+        android:layout_width="224dp"
+        android:layout_height="40dp"
+        android:background="@drawable/spinner_border"
+        android:gravity="center"
+
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/spinner_from"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/spinner_from"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_from"
+        app:layout_constraintVertical_bias="0.053" />
+
+
+    <EditText
+        android:id="@+id/result"
+        android:layout_width="232dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/border"
+        android:editable="false"
+        android:ems="10"
+        android:enabled="false"
+        android:gravity="center"
+        android:hint="Converted Amount"
+        android:inputType="textPersonName"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorHint="@android:color/darker_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/convert" />
+
+    <Button
+        android:id="@+id/convert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:background="@drawable/button_border"
+        android:backgroundTint="@color/colorAccent"
+        android:gravity="center"
+        android:onClick="convert"
+        android:text="Convert"
+
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_to" />
+
+    <EditText
+        android:id="@+id/amount"
+        android:layout_width="231dp"
+        android:layout_height="44dp"
+        android:layout_marginBottom="68dp"
+        android:background="@drawable/border"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Enter Amount to Convert"
+        android:inputType="numberDecimal"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorHint="@android:color/darker_gray"
+        app:layout_constraintBottom_toTopOf="@+id/spinner_from"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/spinner_to"
+        app:layout_constraintEnd_toEndOf="@+id/spinner_to"
+        app:layout_constraintTop_toTopOf="@+id/spinner_to"
+        app:srcCompat="@android:drawable/arrow_down_float" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/spinner_from"
+        app:layout_constraintEnd_toEndOf="@+id/spinner_from"
+        app:layout_constraintTop_toTopOf="@+id/spinner_from"
+        app:layout_constraintVertical_bias="0.47000003"
+        app:srcCompat="@android:drawable/arrow_down_float" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:onClick="darkmode"
+        android:text="Dark Mode"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Convert€x"
+        android:textColor="@color/colorPrimary"
+        android:textSize="48sp"
+        app:fontFamily="@font/architects_daughter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="By AA Surani"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp"
+        app:fontFamily="@font/abel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
